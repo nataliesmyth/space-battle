@@ -1,25 +1,36 @@
 // Parent Ship Class
 
 class Ship {
-    constructor(id=1, health=100, damage=10) {
-    this.id = id;
-      this.health = health;
-      this.damage = damage;
-      this.shipColor = shipColor;
+    constructor() {
+    //   this.id = id;
+      this.hull = hull;
+      this.firepower = firepower;
+      this.accuracy = accuracy;
+    //   this.shipColor = shipColor;
     }
-  //   Instance Method
-    attack(target) {
-      target.health = target.health - this.damage;
-    }
+}
 
-    defineSelf() {
-        return `Ship ID = ${this.id}, Ship Health = ${this.health}`
+class Enemy extends Ship {
+    constructor(hull=100, firepower=10, accuracy=.6) {
+        super(hull, firepower, accuracy)
     }
+}
+
+
+
+//   //   Instance Method
+//     attack(target) {
+//       target.health = target.health - this.damage;
+//     }
+
+//     defineSelf() {
+//         return `Ship ID = ${this.id}, Ship Health = ${this.health}`
+//     }
     
-  //   Class Method
-    static getColors() {
-      return ['red', 'blue', 'black']
-    }
-  }
+//   //   Class Method
+//     static getColors() {
+//       return ['red', 'blue', 'black']
+//     }
+//   }
 
   const enemy1 = newShip(1);
