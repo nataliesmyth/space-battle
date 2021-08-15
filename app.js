@@ -1,7 +1,7 @@
 // Parent Ship Class
 
 class Ship {
-    constructor() {
+    constructor(hull, firepower, accuracy) {
     //   this.id = id;
       this.hull = hull;
       this.firepower = firepower;
@@ -9,6 +9,15 @@ class Ship {
     //   this.shipColor = shipColor;
     }
 }
+
+class EarthsDefense extends Ship {
+    constructor(hull=20, firepower=5, accuracy=.7) {
+        super(hull, firepower, accuracy)
+    }
+}
+
+const earthsDefense = new EarthsDefense();
+console.log(earthsDefense)
 
 class Enemy extends Ship {
     constructor(hull=100, firepower=10, accuracy=.6) {
@@ -33,4 +42,4 @@ class Enemy extends Ship {
 //     }
 //   }
 
-  const enemy1 = newShip(1);
+  const enemy1 = new Enemy(1);
