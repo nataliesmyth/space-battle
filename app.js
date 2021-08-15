@@ -21,3 +21,5 @@ class Ship {
       return ['red', 'blue', 'black']
     }
   }
+
+  const enemy1 = newShip(1);
