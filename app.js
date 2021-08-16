@@ -14,24 +14,37 @@ class Ship {
       }
 }
 
-class EarthsDefense extends Ship {
+class Player extends Ship {
     constructor(hull=20, firepower=5, accuracy=.7) {
         super(hull, firepower, accuracy)
     }
 }
 
-const earthsDefense = new EarthsDefense();
-console.log(earthsDefense)
+const player = new Player();
+console.log(player)
+
+function getRandomNumber (min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+};
+console.log(getRandomNumber(2, 5))
 
 class Enemy extends Ship {
     constructor(hull=10, firepower=10, accuracy=.6) {
         super(hull, firepower, accuracy)
+        
     }
 }
 
-const enemy1 = new Enemy(1);
-earthsDefense.attack(enemy1);
-console.log(enemy1)
+for (let i = 0; i < 6; i++) {
+    const enemy = new Enemy();
+    console.log(enemy)
+}
+// const enemy2 = new Enemy(2);
+// const enemy3 = new Enemy(3);
+// const enemy4 = new Enemy(4);
+// const enemy5 = new Enemy(5);
+// const enemy6 = new Enemy(6);
+// player.attack(enemy1);
 
 
 //     defineSelf() {
