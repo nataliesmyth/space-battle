@@ -1,25 +1,20 @@
-// Parent Ship Class
+// Player Object
 
-class Player {
-    constructor(hull=20, firepower=5, accuracy=.7) {
-        //   this.id = id;
-      this.hull = hull;
-      this.firepower = firepower;
-      this.accuracy = accuracy;
+const player = {
+    hull: 20,
+    firepower: 5,
+    accuracy: .7,
     //   this.shipColor = shipColor;
+    attack(target) {
+      target.hull = target.hull - this.firepower;
     }
-    //   Instance Method
-      attack(target) {
-        target.hull = target.hull - this.firepower;
-      }
 }
-
 
 function getRandomNumber (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 };
 
-// we need a random decimal, not a number
+// for the accuracy property, we need a random decimal, not a number
 function getRandomDecimal (min, max) {
     if ((min || max) >= 1 || (min || max) < 0) {
         return 'Please use numbers that are between 0 and 1'
@@ -42,13 +37,10 @@ const enemyArmy = [];
 for (let i = 0; i < 6; i++) {
     enemyArmy.push(new Enemy)
 }
+// Player.attack(Enemy);
+console.log(Enemy)
 console.log(enemyArmy)
-// const enemy2 = new Enemy(2);
-// const enemy3 = new Enemy(3);
-// const enemy4 = new Enemy(4);
-// const enemy5 = new Enemy(5);
-// const enemy6 = new Enemy(6);
-// player.attack(enemy1);
+
 
 
 //     defineSelf() {
@@ -60,3 +52,32 @@ console.log(enemyArmy)
 //       return ['red', 'blue', 'black']
 //     }
 //   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --- Game Rounds --- // 
+
+// Player moves 
+
+function playerMove (enemy) {
+    if (Math.random() < player.accuracy) {
+        player.attack(enemy); 
+        return `Direct hit! Enemy ship hull: ${enemy.hull}`
+    } else if (Math.random() > player.accuracy) {
+        return `You missed! Enemy ship hull: ${enemy.hull}`
+    }; 
+};
+
+console.log(playerMove(enemyArmy[0]))
