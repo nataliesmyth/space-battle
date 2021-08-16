@@ -81,3 +81,9 @@ function playerMove (enemy) {
 };
 
 console.log(playerMove(enemyArmy[0]))
+
+function enemyMove (player) {
+    if (Math.random() < Enemy.accuracy) {
+
+    }
+}
