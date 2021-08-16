@@ -37,11 +37,12 @@ class Enemy {
     }
 }
 
+const enemyArmy = [];
 
 for (let i = 0; i < 6; i++) {
-    const enemy = new Enemy();
-    console.log(enemy)
+    enemyArmy.push(new Enemy)
 }
+console.log(enemyArmy)
 // const enemy2 = new Enemy(2);
 // const enemy3 = new Enemy(3);
 // const enemy4 = new Enemy(4);
