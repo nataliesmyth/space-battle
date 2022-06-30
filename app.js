@@ -35,7 +35,7 @@ class Enemy {
 const enemyArmy = [];
 
 for (let i = 0; i < 6; i++) {
-    enemyArmy.push(new Enemy)
+    enemyArmy.push(new Enemy())
 }
 // Player.attack(Enemy);
 console.log(Enemy)
